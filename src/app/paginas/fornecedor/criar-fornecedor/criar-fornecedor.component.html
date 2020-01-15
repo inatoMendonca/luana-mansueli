@@ -1,0 +1,12 @@
+<div class="col-md-8 mx-auto">
+    <app-error-msg></app-error-msg>
+</div>
+<app-form-fornecedor (outputFornecedor)="criar($event)"></app-form-fornecedor>
+<ng-template #insereModal>
+    <div class="modal-body text-center">
+      <p>Inserir novo Fornecedor?</p>
+      <button type="button" class="btn btn-default" (click)="confirmaInsercao()">Sim</button>
+      <button type="button" class="btn btn-primary" (click)="cancelaInsercao()">Não</button>
+    </div>
+  </ng-template>
+

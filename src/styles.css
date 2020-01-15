@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-family: Muli;
+}
+
+.cabecalho {
+    width: 1200px;
+    /*background-color: #ff00f2;*/
+    height: 100px;
+}
+
+.tabela-cadastro {
+    padding-top: 20px;
+    width: 1200px;
+    /*background-color: #0073ff;*/
+    height: 700px;
+}
+
+.busca {
+    width: 800px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+.painel-busca {
+    width: 800px;
+    background-color: #F2F2F2;
+    height: 80px;
+    margin: 0 auto;
+    padding-left: 5px;
+    padding-top: 5px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form-busca {
+    width: 800px;
+    height: 80px;
+    margin: 0 auto;
+    padding-left: 5px;
+    padding-top: 5px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}

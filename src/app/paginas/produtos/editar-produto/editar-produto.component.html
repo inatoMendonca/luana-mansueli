@@ -1,0 +1,11 @@
+<div class="col-md-8 mx-auto">
+    <app-error-msg></app-error-msg>
+</div>
+<app-form-produto [produto]="produto" (outputProduto)=atualizar($event)></app-form-produto>
+<ng-template #alteraModal>
+    <div class="modal-body text-center">
+      <p>Tem certeza que deseja alterar o Produto?</p>
+      <button type="button" class="btn btn-default" (click)="confirmaAlteracao()">Sim</button>
+      <button type="button" class="btn btn-primary" (click)="cancelaAlteracao()">Não</button>
+    </div>
+  </ng-template>

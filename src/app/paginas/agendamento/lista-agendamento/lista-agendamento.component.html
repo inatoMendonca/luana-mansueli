@@ -1,0 +1,82 @@
+<div class="cabecalho">
+  <h1 class="border-bottom">Agendamentos</h1>
+</div>
+<div class="busca">
+  <h5 class="border-bottom">Buscar Agendamento</h5>
+</div>
+<div class="painel-busca">
+  <form #f="ngForm" (ngSubmit)="onSubmit(agendamento.nomeCliente, agendamento.diaAgendamento)">
+    <div class="form-row">
+      <div class="col-auto">
+        <label for="nomeCliente" style="margin-top: 6px;">Nome:</label>
+      </div>
+      <div class="col-auto">
+        <label class="sr-only" for="nomeCliente">Nome</label>
+        <input #nomeCliente="ngModel" type="text" class="form-control mb-2" id="nomeCliente"
+          placeholder="Digite o nome aqui..." name="nomeCliente" [(ngModel)]="agendamento.nomeCliente">
+      </div>
+      <div class="col-auto">
+        <label for="cpf-cliente" style="margin-top: 6px;">Data:</label>
+      </div>
+      <div class="col-auto">
+        <input #diaAgendamento="ngModel" [(ngModel)]="agendamento.diaAgendamento" type="date" class="form-control"
+          id="diaAgendamento" name="diaAgendamento">
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-2">Buscar</button>
+      </div>
+      <div class="col-auto">
+        <button type="button" class="btn btn-success mb-2"
+          routerLink="/cadastro/agendamentos/novoagendamento">Novo</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="row">
+  <div class="col md-8 mx-auto">
+    <app-error-msg></app-error-msg>
+    <div class="text-center" *ngIf="!existemAgendamentos()">
+      Nenhum Agendamento Cadastrado!
+    </div>
+  </div>
+</div>
+<div class="tabela-cadastro">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Serviço</th>
+        <th scope="col">Profissional</th>
+        <th scope=col>Data</th>
+        <th scope="col">Horário</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let agendamento of agendamentos | paginate: {itemsPerPage: contador, currentPage: Pag}; let i = index">
+        <th>{{agendamento.nomeCliente}}</th>
+        <td>{{agendamento.nomeServico}}</td>
+        <td>{{agendamento.nomeProfissional}}</td>
+        <td><span>{{ agendamento.diaAgendamento | date:'dd/MM/yyyy' }}</span></td>
+        <td>{{agendamento.inicioAgendamento}} - {{agendamento.fimAgendamento}}</td>
+        <td>
+          <button type="button" id="btn-editar" class="btn btn-warning btn-sm mr-2"
+            routerLink="/cadastro/agendamentos/editar/{{agendamento.idAgendamento}}">Editar</button>
+          <button type="button" id="btn-excluir" class="btn btn-danger btn-sm"
+            (click)="excluir(agendamento.idAgendamento)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center">
+    <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
+  </div>
+</div>
+<ng-template #deleteModal>
+  <div class="modal-body text-center">
+    <p>Tem certeza que deseja excluir o Agendamento?</p>
+    <button type="button" class="btn btn-default" (click)="onConfirmDelete()">Sim</button>
+    <button type="button" class="btn btn-primary" (click)="onDeclineDelete()">Não</button>
+  </div>
+</ng-template>

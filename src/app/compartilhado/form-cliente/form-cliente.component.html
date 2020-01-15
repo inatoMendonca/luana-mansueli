@@ -1,0 +1,113 @@
+<div class="cabecalho">
+    <h1 class="border-bottom">Cadastrar Cliente</h1>
+</div>
+<div class="form-busca">
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="nomeCliente">Nome</label>
+                <input
+                    #nomeCliente="ngModel"
+                    [class.is-invalid]="!nomeCliente.valid && nomeCliente.touched"
+                    type="text" 
+                    class="form-control" 
+                    id="nomeCliente" 
+                    name="nomeCliente"
+                    [(ngModel)]="cliente.nomeCliente"
+                    required
+                    placeholder="Digite o nome do Cliente">
+                <div *ngIf="!nomeCliente.valid && nomeCliente.touched" class="invalid-feedback">
+                    Digite o nome do Cliente
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label for="enderecoCliente">Endereço</label>
+                <input
+                    #enderecoCliente="ngModel"
+                    [class.is-invalid]="!enderecoCliente.valid && enderecoCliente.touched"
+                    type="text" 
+                    class="form-control" 
+                    id="enderecoCliente" 
+                    name="enderecoCliente"
+                    [(ngModel)]="cliente.enderecoCliente"
+                    required
+                    placeholder="Digite o endereço do Cliente">
+                <div *ngIf="!enderecoCliente.valid && enderecoCliente.touched" class="invalid-feedback">
+                    Digite o endereço do Cliente
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="mailCliente">E-mail</label>
+                <input
+                    #mailCliente="ngModel"
+                    [class.is-invalid]="!mailCliente.valid && mailCliente.touched"
+                    type="email" 
+                    class="form-control" 
+                    id="mailCliente" 
+                    name="mailCliente"
+                    [(ngModel)]="cliente.mailCliente"
+                    required
+                    placeholder="Digite o e-mail do Cliente">
+                <div *ngIf="!mailCliente.valid && mailCliente.touched" class="invalid-feedback">
+                    Digite o e-mail do Cliente
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="foneCliente">Telefone</label>
+                <input 
+                    type="tel"
+                    #foneCliente="ngModel"
+                    [class.is-invalid]="!foneCliente.valid && foneCliente.touched"
+                    [(ngModel)]="cliente.foneCliente"
+                    class="form-control" 
+                    id="foneCliente" 
+                    name="foneCliente"
+                    placeholder="Digite o Telefone do(a) Cliente"
+                    onkeypress="$(this).mask('(00) 00000-0000')"
+                    required>
+                <div *ngIf="!foneCliente.valid && foneCliente.touched" class="invalid-feedback">
+                    Digite o Telefone do(a) Cliente
+                </div> 
+            </div>
+            <div class="form-group col-md-4">
+                <label for="cpfCliente">CPF</label>
+                <input 
+                    type="text"
+                    #cpfCliente="ngModel"
+                    [class.is-invalid]="!cpfCliente.valid && cpfCliente.touched"
+                    [(ngModel)]="cliente.cpfCliente"
+                    class="form-control" 
+                    id="cpfCliente"
+                    name="cpfCliente" 
+                    onkeypress="$(this).mask('000.000.000-00')"
+                    placeholder="Digite o CPF do(a) Cliente"
+                    required>
+                <div *ngIf="!cpfCliente.valid && cpfCliente.touched" class="invalid-feedback">
+                    Digite o CPF do(a) Cliente
+                </div>  
+            </div>
+            <div class="form-group col-md-4">
+                <label for="sexoCliente">Sexo</label>
+                <select 
+                    #sexoCliente="ngModel"
+                    [class.is-invalid]="!sexoCliente.valid && sexoCliente.touched"
+                    [(ngModel)]="cliente.sexoCliente"
+                    id="sexoCliente" 
+                    name="sexoCliente"
+                    class="form-control"
+                    required>
+                    <option [ngValue]="undefined">Selecione...</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="meminino">Feminino</option>
+                </select>
+                <div *ngIf="!sexoCliente.valid && sexoCliente.touched" class="invalid-feedback">
+                    Selecione o sexo do(a) Cliente
+                </div> 
+            </div>
+            <div class="form-group col-md-12 mt-4">
+                <button type="submit" class="btn btn-success btn-lg ml-2 float-right" [disabled]="!f.valid">Inserir</button>
+                <button type="submit" class="btn btn-primary btn-lg  float-right" routerLink="/cadastro/clientes">Voltar</button>
+            </div>
+        </div>
+    </form>
+</div>

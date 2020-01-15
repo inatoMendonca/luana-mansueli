@@ -1,0 +1,72 @@
+<div class="cabecalho">
+    <h1 class="border-bottom">Cadastrar Produto</h1>
+</div>
+<div class="form-busca">
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="nomeProduto">Nome</label>
+                <input
+                    #nomeProduto="ngModel"
+                    [class.is-invalid]="!nomeProduto.valid && nomeProduto.touched"
+                    type="text"
+                    [(ngModel)]="produto.nomeProduto" 
+                    class="form-control" 
+                    id="nomeProduto"
+                    name="nomeProduto"
+                    placeholder="Digite o nome"
+                    required>
+                <div *ngIf="!nomeProduto.valid && nomeProduto.touched" class="invalid-feedback">
+                    Digite o nome do Produto
+                </div>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="valorProduto">Valor</label>
+                <input
+                    #valorProduto="ngModel"
+                    [class.is-invalid]="!valorProduto.valid && valorProduto.touched"
+                    [(ngModel)]="produto.valorProduto"
+                    type="number" 
+                    class="form-control" 
+                    id="valorProduto" 
+                    name="valorProduto"
+                    placeholder="R$"
+                    required>
+                <div *ngIf="!valorProduto.valid && valorProduto.touched" class="invalid-feedback">
+                    Digite o valor do Produto
+                </div>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="qtdeProduto">Quantidade</label>
+                <input 
+                    #qtdeProduto="ngModel"
+                    [class.is-invalid]="!qtdeProduto.valid && qtdeProduto.touched"
+                    [(ngModel)]="produto.qtdeProduto"
+                    type="number"
+                    class="form-control" 
+                    id="qtdeProduto"
+                    name="qtdeProduto"
+                    placeholder="0"
+                    required>
+                <div *ngIf="!qtdeProduto.valid && qtdeProduto.touched" class="invalid-feedback">
+                    Digite a quantidade do Produto
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="obsProduto">Observações</label>
+                <textarea
+                    #obsProduto="ngModel"
+                    [(ngModel)]="produto.obsProduto"
+                    class="form-control" 
+                    id="obsProduto"
+                    name="obsProduto"
+                    rows="3"
+                    placeholder="Digite alguma Observação caso necessária"></textarea>
+            </div>
+            <div class="form-group col-md-12 mt-4">
+                <button type="submit" class="btn btn-success btn-lg ml-2 float-right" [disabled]="!f.valid">Inserir</button>
+                <button type="submit" class="btn btn-primary btn-lg  float-right" routerLink="/cadastro/produtos">Voltar</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,65 @@
+<div class="cabecalho">
+    <h1 class="border-bottom">Cadastro de Produtos</h1>
+</div>
+<div class="busca">
+    <h5 class="border-bottom">Buscar Produto</h5>
+</div>
+<div class="painel-busca">
+    <form>
+        <div class="form-row">
+            <div class="col-auto">
+                <label for="nome-produto" style="margin-top: 6px;">Nome:</label>
+            </div>
+            <div class="col-auto">
+                <label class="sr-only" for="nome-produto">Nome</label>
+                <input type="text" class="form-control mb-2" style="width: 300px;" id="nome-produto"
+                    placeholder="Digite o nome do Produto aqui...">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-2">Buscar</button>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-success mb-2" routerLink="/cadastro/produtos/novoproduto">Novo</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="row">
+    <div class="col md-8 mx-auto">
+        <app-error-msg></app-error-msg>
+        <div class="text-center" *ngIf="!existemProdutos()">
+            Nenhum Produto cadastrado!
+        </div>
+    </div>
+</div>
+<div class="tabela-cadastro">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let produto of produtos | paginate: {itemsPerPage: contador, currentPage: Pag}; let i = index">
+                <th>{{produto.nomeProduto}}</th>
+                <td>{{produto.valorProduto}}</td>
+                <td>
+                    <button type="button" id="btn-editar" class="btn btn-warning btn-sm mr-2" routerLink="/cadastro/produtos/editar/{{produto.idProduto}}">Editar</button>
+                    <button type="button" id="btn-excluir" class="btn btn-danger btn-sm" (click)="excluir(produto.idProduto)">Excluir</button>
+                  </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-center">
+        <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
+      </div>
+</div>
+<ng-template #deleteModal>
+    <div class="modal-body text-center">
+      <p>Tem certeza que deseja excluir o Produto?</p>
+      <button type="button" class="btn btn-default" (click)="onConfirmDelete()">Sim</button>
+      <button type="button" class="btn btn-primary" (click)="onDeclineDelete()">Não</button>
+    </div>
+  </ng-template>

@@ -1,0 +1,17 @@
+.main {
+    margin-top: 56px;
+    display: flex;
+
+    min-height: calc(100vh - 52px);
+    overflow: hidden;
+}
+
+.principal {
+    margin-top: 30px;
+    width: 1200px;
+    height: 800px;
+}
+
+
+
+

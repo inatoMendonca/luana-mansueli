@@ -1,0 +1,118 @@
+<div class="cabecalho">
+    <h1 class="border-bottom">Cadastrar Profissional</h1>
+</div>
+<div class="form-busca">
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="nomeProfissional">Nome</label>
+                <input
+                    #nomeProfissional="ngModel"
+                    [class.is-invalid]="!nomeProfissional.valid && nomeProfissional.touched"
+                    [(ngModel)]="profissional.nomeProfissional"
+                    type="text"
+                    class="form-control" 
+                    id="nomeProfissional"
+                    name="nomeProfissional" 
+                    required
+                    placeholder="Digite o nome do(a) Profissional">
+                <div *ngIf="!nomeProfissional.valid && nomeProfissional.touched" class="invalid-feedback">
+                    Digite o nome do(a) Profissional
+                </div>  
+            </div>
+            <div class="form-group col-md-6">
+                <label for="mailProfissional">E-mail</label>
+                <input 
+                    #mailProfissional="ngModel"
+                    [class.is-invalid]="!mailProfissional.valid && mailProfissional.touched"
+                    [(ngModel)]="profissional.mailProfissional"
+                    type="email" 
+                    class="form-control" 
+                    id="mailProfissional" 
+                    name="mailProfissional"
+                    placeholder="Digite o e-mail do(a) Profissional"
+                    required>
+                <div *ngIf="!mailProfissional.valid && mailProfissional.touched" class="invalid-feedback">
+                    Digite o e-mail do(a) Profissional
+                </div>  
+            </div>
+            <div class="form-group col-md-6">
+                <label for="cpfProfissional">CPF</label>
+                <input 
+                    type="text"
+                    #cpfProfissional="ngModel"
+                    [class.is-invalid]="!cpfProfissional.valid && cpfProfissional.touched"
+                    [(ngModel)]="profissional.cpfProfissional"
+                    class="form-control" 
+                    id="cpfProfissional"
+                    name="cpfProfissional" 
+                    onkeypress="$(this).mask('000.000.000-00')"
+                    placeholder="Digite o CPF do(a) Profissional"
+                    required>
+                <div *ngIf="!cpfProfissional.valid && cpfProfissional.touched" class="invalid-feedback">
+                    Digite o CPF do(a) Profissional
+                </div>  
+            </div>
+            <div class="form-group col-md-6">
+                <label for="foneProfissional">Celular</label>
+                <input 
+                    type="tel"
+                    #foneProfissional="ngModel"
+                    [class.is-invalid]="!foneProfissional.valid && foneProfissional.touched"
+                    [(ngModel)]="profissional.foneProfissional"
+                    class="form-control" 
+                    id="foneProfissional" 
+                    name="foneProfissional"
+                    placeholder="Digite o Celular do(a) Profissional"
+                    onkeypress="$(this).mask('(00) 00000-0000')"
+                    required>
+                <div *ngIf="!foneProfissional.valid && foneProfissional.touched" class="invalid-feedback">
+                    Digite o Celular do(a) Profissional
+                </div> 
+            </div>
+            <div class="form-group col-md-4">
+                <label for="funcaoProfissional">Função</label>
+                <select 
+                    #funcaoProfissional="ngModel"
+                    [class.is-invalid]="!funcaoProfissional.valid && funcaoProfissional.touched"
+                    [(ngModel)]="profissional.funcaoProfissional"
+                    id="funcaoProfissional" 
+                    name="funcaoProfissional"
+                    class="form-control"
+                    required>
+                    <option [ngValue]="undefined">Selecione...</option>
+                    <option value="maquiagem">Maquiagem</option>
+                    <option value="cabeleireiro(a)">Cabeleireiro(a)</option>
+                    <option value="depilação">Depilação</option>
+                    <option value="administrativo">Administrativo</option>
+                    <option value="vendedor(a)">Vendedor(a)</option>
+                </select>
+                <div *ngIf="!funcaoProfissional.valid && funcaoProfissional.touched" class="invalid-feedback">
+                    Selecione a função do(a) Profissional
+                </div> 
+            </div>
+            <div class="form-group col-md-4">
+                <label for="sexoProfissional">Sexo</label>
+                <select 
+                    #sexoProfissional="ngModel"
+                    [class.is-invalid]="!sexoProfissional.valid && sexoProfissional.touched"
+                    [(ngModel)]="profissional.sexoProfissional"
+                    id="sexoProfissional" 
+                    name="sexoProfissional"
+                    class="form-control"
+                    required>
+                    <option [ngValue]="undefined">Selecione...</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                </select>
+                <div *ngIf="!sexoProfissional.valid && sexoProfissional.touched" class="invalid-feedback">
+                    Selecione o sexo do(a) Profissional
+                </div> 
+            </div>
+            <div class="form-group col-md-12 mt-4">
+                <button type="submit" class="btn btn-success btn-lg ml-2 float-right" [disabled]="!f.valid">Inserir</button>
+                <button type="submit" class="btn btn-primary btn-lg  float-right" routerLink="/cadastro/profissionais">Voltar</button>
+            </div>
+        </div>
+    </form>
+</div>

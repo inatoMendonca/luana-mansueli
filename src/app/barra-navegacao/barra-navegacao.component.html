@@ -1,0 +1,43 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fonte-bar">
+        <a class="navbar-brand disabled">Administrador</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" type="submit" routerLink="home/agendamentos" (click)="atualizaLista()">Home</a>
+            </li>
+            <li class="nav-item dropdown active">
+              <a class="nav-link dropdown-toggle" href="#" role="button" id="dropCadastros" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Cadastros
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropCadastros">
+                <a class="dropdown-item" routerLink="cadastro/clientes">Clientes</a>
+                <a class="dropdown-item" routerLink="cadastro/fornecedores">Fornecedores</a>
+                <a class="dropdown-item" routerLink="cadastro/profissionais">Profissionais</a>
+                <a class="dropdown-item" routerLink="cadastro/servicos">Serviços</a>
+                <a class="dropdown-item" routerLink="cadastro/produtos">Produtos</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown active">
+              <a class="nav-link dropdown-toggle" href="#" role="button" id="dropRelatorio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Relatórios
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropRelatorio">
+                <a class="dropdown-item" href="#">Teste</a>
+                <a class="dropdown-item" href="#">Teste</a>
+                <a class="dropdown-item" href="#">Teste</a>
+              </div>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href=#>Fluxo de Caixa</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href=#>Comanda</a>
+            </li>
+          </ul>
+          <ul class=navbar-nav>
+            <li class="nav-item text-right">
+              <a class="nav-link" href=#>Sair</a>
+            </li>
+          </ul>
+        </div>
+      </nav>

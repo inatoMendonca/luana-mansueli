@@ -1,0 +1,12 @@
+<div class="col-md-8 mx-auto">
+    <app-error-msg></app-error-msg>
+</div>
+<app-form-servico [servico]="servico" (outputServico)="atualizar($event)"></app-form-servico>
+<ng-template #alteraModal>
+    <div class="modal-body text-center">
+      <p>Tem certeza que deseja alterar o Serviço?</p>
+      <button type="button" class="btn btn-default" (click)="confirmaAlteracao()">Sim</button>
+      <button type="button" class="btn btn-primary" (click)="cancelaAlteracao()">Não</button>
+    </div>
+  </ng-template>
+

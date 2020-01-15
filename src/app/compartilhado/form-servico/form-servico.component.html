@@ -1,0 +1,56 @@
+<div class="cabecalho">
+    <h1 class="border-bottom">Cadastrar Serviço</h1>
+</div>
+<div class="form-busca">
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="nomeServico">Nome</label>
+                <input
+                    #nomeServico="ngModel"
+                    [class.is-invalid]="!nomeServico.valid && nomeServico.touched"
+                    type="text" 
+                    class="form-control" 
+                    id="nomeServico" 
+                    name="nomeServico"
+                    [(ngModel)]="servico.nomeServico"
+                    required
+                    placeholder="Digite o nome do serviço">
+                <div *ngIf="!nomeServico.valid && nomeServico.touched" class="invalid-feedback">
+                    Digite o nome do Serviço
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="valorServico">Valor</label>
+                <input
+                    #valorServico="ngModel"
+                    [(ngModel)]="servico.valorServico"
+                    [class.is-invalid]="!valorServico.valid && valorServico.touched"
+                    required
+                    type="number" 
+                    class="form-control" 
+                    id="valor-servico"
+                    name="valorServico"
+                    placeholder="R$ ">
+                <div *ngIf="!valorServico.valid && valorServico.touched" class="invalid-feedback">
+                    Digite o valor do Serviço
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label for="obsServico">Observações</label>
+                <textarea class="form-control" 
+                    #obsServico="ngModel"
+                    [(ngModel)]="servico.obsServico"
+                    id="obsServico" 
+                    name="obServico"
+                    rows="3"
+                    placeholder="Digite alguma Observação caso necessária">
+                </textarea>
+            </div>
+            <div class="form-group col-md-12 mt-4">
+                <button type="submit" class="btn btn-success btn-lg ml-2 float-right" [disabled]="!f.valid">Inserir</button>
+                <button type="submit" class="btn btn-primary btn-lg  float-right" routerLink="/cadastro/servicos">Voltar</button>
+            </div>
+        </div>
+    </form>
+</div>

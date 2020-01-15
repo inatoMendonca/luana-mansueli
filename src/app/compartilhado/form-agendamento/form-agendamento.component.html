@@ -1,0 +1,133 @@
+<div class="cabecalho">
+    <h1 class="border-bottom">Realizar Agendamento</h1>
+</div>
+<div class="form-busca">
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="nomeCliente">Nome Cliente</label>
+                <input
+                    #nomeCliente="ngModel"
+                    [class.is-invalid]="!nomeCliente.valid && nomeCliente.touched"
+                    [(ngModel)]="agendamento.nomeCliente"
+                    type="text"
+                    class="form-control" 
+                    id="nomeCliente"
+                    name="nomeCliente" 
+                    required
+                    placeholder="Digite o nome do(a) Cliente">
+                <div *ngIf="!nomeCliente.valid && nomeCliente.touched" class="invalid-feedback">
+                    Digite o nome do(a) Cliente
+                </div>  
+            </div>
+            <div class="form-group col-md-6">
+                <label for="nomeProfissional">Profissional</label>
+                <select 
+                    #nomeProfissional="ngModel"
+                    [class.is-invalid]="!nomeProfissional.valid && nomeProfissional.touched"
+                    [(ngModel)]="agendamento.nomeProfissional"
+                    id="nomeProfissional" 
+                    name="nomeProfissional"
+                    class="form-control"
+                    required>
+                    <option [ngValue]="undefined">Selecione...</option>
+                    <option value="Luana Mansueli">Luana Mansueli</option>
+                    <option value="Marli">Marli</option>
+                    <option value="Pâmela">Pâmela</option>
+                    <option value="Ana Flávia">Ana Flávia</option>
+                </select>
+                <div *ngIf="!nomeProfissional.valid && nomeProfissional.touched" class="invalid-feedback">
+                    Selecione a função do(a) Profissional
+                </div> 
+            </div>
+            <div class="form-group col-md-6">
+                <label for="nomeServico">Serviço</label>
+                <select 
+                    #nomeServico="ngModel"
+                    [class.is-invalid]="!nomeServico.valid && nomeServico.touched"
+                    [(ngModel)]="agendamento.nomeServico"
+                    id="nomeServico"
+                    name="nomeServico"
+                    class="form-control"
+                    required>
+                    <option [ngValue]="undefined">Selecione...</option>
+                    <option value="Maquiagem">Maquiagem</option>
+                    <option value="Escova Progressiva">Escova Progressiva</option>
+                    <option value="Corte">Corte</option>
+                    <option value="Coloração">Descoloração</option>
+                    <option value="Hidratação">Hidratação</option>
+                    <option value="Selante">Selante</option>
+                    <option value="Penteado">Penteado</option>
+                    <option value="Botox">Botox</option>
+                    <option value="Matização">Matização</option>
+                </select>
+                <div *ngIf="!nomeServico.valid && nomeServico.touched" class="invalid-feedback">
+                    Selecione o Serviço
+                </div> 
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inicioAgendamento">Dia Agendamento</label>
+                <input
+                    #diaAgendamento="ngModel"
+                    [class.is-invalid]="!diaAgendamento.valid && diaAgendamento.touched"
+                    [(ngModel)]="agendamento.diaAgendamento"
+                    type="date"
+                    class="form-control" 
+                    id="diaAgendamento"
+                    name="diaAgendamento" 
+                    required>
+                <div *ngIf="!diaAgendamento.valid && inicioAgendamento.touched" class="invalid-feedback">
+                    Selecione a data do Agendamento
+                </div>  
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inicioAgendamento">Horário inicial</label>
+                <input
+                    #inicioAgendamento="ngModel"
+                    [class.is-invalid]="!inicioAgendamento.valid && inicioAgendamento.touched"
+                    [(ngModel)]="agendamento.inicioAgendamento"
+                    type="time"
+                    class="form-control" 
+                    id="inicioAgendamento"
+                    name="inicioAgendamento" 
+                    required
+                    placeholder="Selecione o horário inicial">
+                <div *ngIf="!inicioAgendamento.valid && inicioAgendamento.touched" class="invalid-feedback">
+                    Selecione o horário inicial
+                </div>  
+            </div>
+            <div class="form-group col-md-3">
+                <label for="fimAgendamento">Horário final</label>
+                <input
+                    #fimAgendamento="ngModel"
+                    [class.is-invalid]="!fimAgendamento.valid && fimAgendamento.touched"
+                    [(ngModel)]="agendamento.fimAgendamento"
+                    type="time"
+                    class="form-control" 
+                    id="fimAgendamento"
+                    name="fimAgendamento" 
+                    required
+                    placeholder="Selecione o horário final">
+                <div *ngIf="!fimAgendamento.valid && fimAgendamento.touched" class="invalid-feedback">
+                    Selecione o horário final
+                </div>  
+            </div>
+            <div class="form-group col-md-12">
+                <label for="obsAgendamento">Observações</label>
+                <textarea class="form-control" 
+                    #obsServico="ngModel"
+                    [(ngModel)]="agendamento.obsAgendamento"
+                    id="obsAgendamento" 
+                    name="obsAgendamento"
+                    rows="3"
+                    placeholder="Digite alguma Observação caso necessária">
+                </textarea>
+            </div>
+            <div class="form-group col-md-12 mt-4">
+                <button type="submit" class="btn btn-success btn-lg ml-2 float-right" [disabled]="!f.valid">Inserir</button>
+                <button type="submit" class="btn btn-primary btn-lg  float-right" routerLink="home/agendamentos">Voltar</button>
+            </div>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,63 @@
+<div class="cabecalho">
+  <h1 class="border-bottom">Cadastro de Fornecedores</h1>
+</div>
+<div class="busca">
+  <h5 class="border-bottom">Buscar Fornecedor</h5>
+</div>
+<div class="painel-busca">
+  <form>
+    <div class="form-row">
+      <div class="col-auto">
+        <label for="nome-fornecedor" style="margin-top: 6px;">Nome:</label>
+      </div>
+      <div class="col-auto">
+        <label class="sr-only" for="nome-fornecedor">Nome</label>
+        <input type="text" class="form-control mb-2" id="nome-fornecedor" placeholder="Digite o nome aqui...">
+      </div>
+      <div class="col-auto">
+        <label for="cpf-fornecedor" style="margin-top: 6px;">CPF:</label>
+      </div>
+      <div class="col-auto">
+        <label class="sr-only" for="cpf-fornecedor">CPF</label>
+        <input type="text" class="form-control mb-2" id="cpf-fornecedor" placeholder="Digite o CPF aqui...">
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-2">Buscar</button>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-success mb-2" routerLink="/cadastro/fornecedores/novofornecedor">Novo</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="tabela-cadastro">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fornecedor of fornecedores | paginate: {itemsPerPage: contador, currentPage: Pag}; let i = index">
+        <td>{{fornecedor.nomeFornecedor}}</td>
+        <td>R$ {{fornecedor.foneFornecedor}}</td>
+        <td>
+          <button type="button" id="btn-editar" class="btn btn-warning btn-sm mr-2" routerLink="/cadastro/fornecedores/editar/{{fornecedor.idFornecedor}}">Editar</button>
+          <button type="button" id="btn-excluir" class="btn btn-danger btn-sm" (click)="excluir(fornecedor.idFornecedor)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center">
+    <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
+  </div>
+</div>
+<ng-template #deleteModal>
+  <div class="modal-body text-center">
+    <p>Tem certeza que deseja excluir o Fornecedor?</p>
+    <button type="button" class="btn btn-default" (click)="onConfirmDelete()">Sim</button>
+    <button type="button" class="btn btn-primary" (click)="onDeclineDelete()">Não</button>
+  </div>
+</ng-template>
