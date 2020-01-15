@@ -1,4 +1,4 @@
 export const environment = {
-  urlApi: 'http://luana-api.herokuapp.com/api',
+  urlApi: 'https://luana-api.herokuapp.com/api',
   production: true
 };
