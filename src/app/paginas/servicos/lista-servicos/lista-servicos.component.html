@@ -43,7 +43,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let servico of servicos | paginate: {itemsPerPage: contador, currentPage: Pag}; let i = index">
+      <tr *ngFor="let servico of servicos | paginate: {itemsPerPage: contador, currentPage: pag}; let i = index">
         <td>{{servico.nomeServico}}</td>
         <td>R$ {{servico.valorServico}}</td>
         <td>

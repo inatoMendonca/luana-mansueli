@@ -42,7 +42,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let produto of produtos | paginate: {itemsPerPage: contador, currentPage: Pag}; let i = index">
+            <tr *ngFor="let produto of produtos | paginate: {itemsPerPage: contador, currentPage: pag}; let i = index">
                 <th>{{produto.nomeProduto}}</th>
                 <td>{{produto.valorProduto}}</td>
                 <td>

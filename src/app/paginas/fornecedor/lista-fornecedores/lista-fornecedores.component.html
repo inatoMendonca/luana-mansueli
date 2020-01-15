@@ -40,7 +40,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let fornecedor of fornecedores | paginate: {itemsPerPage: contador, currentPage: Pag}; let i = index">
+      <tr *ngFor="let fornecedor of fornecedores | paginate: {itemsPerPage: contador, currentPage: pag}; let i = index">
         <td>{{fornecedor.nomeFornecedor}}</td>
         <td>R$ {{fornecedor.foneFornecedor}}</td>
         <td>

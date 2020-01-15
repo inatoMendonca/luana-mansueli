@@ -49,7 +49,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let profissional of profissionais | paginate: {itemsPerPage: contador, currentPage: Pag}; let i = index">
+      <tr *ngFor="let profissional of profissionais | paginate: {itemsPerPage: contador, currentPage: pag}; let i = index">
         <th>{{profissional.nomeProfissional}}</th>
         <td>{{profissional.funcaoProfissional}}</td>
         <td>{{profissional.foneProfissional}}</td>

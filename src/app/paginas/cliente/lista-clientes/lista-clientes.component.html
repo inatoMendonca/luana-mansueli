@@ -49,7 +49,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let cliente of clientes | paginate: {itemsPerPage: contador, currentPage: Pag}; let i = index">
+      <tr *ngFor="let cliente of clientes | paginate: {itemsPerPage: contador, currentPage: pag}; let i = index">
         <td>{{cliente.nomeCliente}}</td>
         <td>{{cliente.mailCliente}}</td>
         <td>{{cliente.foneCliente}}</td>

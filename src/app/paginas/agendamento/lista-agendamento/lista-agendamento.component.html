@@ -54,7 +54,7 @@
     </thead>
     <tbody>
       <tr
-        *ngFor="let agendamento of agendamentos | paginate: {itemsPerPage: contador, currentPage: Pag}; let i = index">
+        *ngFor="let agendamento of agendamentos | paginate: {itemsPerPage: contador, currentPage: pag}; let i = index">
         <th>{{agendamento.nomeCliente}}</th>
         <td>{{agendamento.nomeServico}}</td>
         <td>{{agendamento.nomeProfissional}}</td>
