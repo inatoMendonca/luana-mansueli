@@ -1,7 +1,9 @@
 export interface Produto {
     idProduto: number;
     nomeProduto: string;
-    valorProduto: number;
+    valorCompraProduto: number;
+    valorVendaProduto: number;
     qtdeProduto: number;
+    dataCompraProduto: Date;
     obsProduto: string;
 }

@@ -8,4 +8,5 @@ export interface Cliente {
     cpfCliente: number;
     enderecoCliente: string;
     sexoCliente: sexoCliente;
+    dataNascimento: Date;
 }

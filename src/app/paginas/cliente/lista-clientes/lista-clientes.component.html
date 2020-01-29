@@ -45,6 +45,7 @@
         <th scope="col">Nome</th>
         <th scope="col">E-mail</th>
         <th scope="col">Telefone</th>
+        <th scope="col">Data de Nascimento</th>
         <th scope="col">Ações</th>
       </tr>
     </thead>
@@ -53,6 +54,7 @@
         <td>{{cliente.nomeCliente}}</td>
         <td>{{cliente.mailCliente}}</td>
         <td>{{cliente.foneCliente}}</td>
+        <td><span>{{ cliente.dataNascimento | date: 'dd/MM/yyyy' }}</span></td>
         <td>
           <button type="button" id="btn-editar" class="btn btn-warning btn-sm mr-2" routerLink="/cadastro/clientes/editar/{{cliente.idCliente}}">Editar</button>
           <button type="button" id="btn-excluir" class="btn btn-danger btn-sm" (click)="excluir(cliente.idCliente)">Excluir</button>

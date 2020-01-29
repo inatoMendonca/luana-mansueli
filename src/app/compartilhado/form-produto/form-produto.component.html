@@ -4,7 +4,7 @@
 <div class="form-busca">
     <form #f="ngForm" (ngSubmit)="onSubmit()">
         <div class="form-row">
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-6">
                 <label for="nomeProduto">Nome</label>
                 <input
                     #nomeProduto="ngModel"
@@ -21,22 +21,38 @@
                 </div>
             </div>
             <div class="form-group col-md-3">
-                <label for="valorProduto">Valor</label>
+                <label for="valorCompraProduto">Valor de Compra</label>
                 <input
-                    #valorProduto="ngModel"
-                    [class.is-invalid]="!valorProduto.valid && valorProduto.touched"
-                    [(ngModel)]="produto.valorProduto"
+                    #valorCompraProduto="ngModel"
+                    [class.is-invalid]="!valorCompraProduto.valid && valorCompraProduto.touched"
+                    [(ngModel)]="produto.valorCompraProduto"
                     type="number" 
                     class="form-control" 
-                    id="valorProduto" 
-                    name="valorProduto"
+                    id="valorCompraProduto" 
+                    name="valorCompraProduto"
                     placeholder="R$"
                     required>
-                <div *ngIf="!valorProduto.valid && valorProduto.touched" class="invalid-feedback">
-                    Digite o valor do Produto
+                <div *ngIf="!valorCompraProduto.valid && valorCompraProduto.touched" class="invalid-feedback">
+                    Digite o valor de compra Produto
                 </div>
             </div>
             <div class="form-group col-md-3">
+                <label for="valorVendaProduto">Valor de Venda</label>
+                <input
+                    #valorVendaProduto="ngModel"
+                    [class.is-invalid]="!valorVendaProduto.valid && valorVendaProduto.touched"
+                    [(ngModel)]="produto.valorVendaProduto"
+                    type="number" 
+                    class="form-control" 
+                    id="valorVendaProduto" 
+                    name="valorVendaProduto"
+                    placeholder="R$"
+                    required>
+                <div *ngIf="!valorVendaProduto.valid && valorVendaProduto.touched" class="invalid-feedback">
+                    Digite o valor do Produto
+                </div>
+            </div>
+            <div class="form-group col-md-2">
                 <label for="qtdeProduto">Quantidade</label>
                 <input 
                     #qtdeProduto="ngModel"
@@ -51,6 +67,21 @@
                 <div *ngIf="!qtdeProduto.valid && qtdeProduto.touched" class="invalid-feedback">
                     Digite a quantidade do Produto
                 </div>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="dataCompraProduto">Data de Compra</label>
+                <input
+                    #dataCompraProduto="ngModel"
+                    [class.is-invalid]="!dataCompraProduto.valid && dataCompraProduto.touched"
+                    [(ngModel)]="produto.dataCompraProduto"
+                    type="date"
+                    class="form-control" 
+                    id="dataCompraProduto"
+                    name="dataCompraProduto" 
+                    required>
+                <div *ngIf="!dataCompraProduto.valid && dataCompraProduto.touched" class="invalid-feedback">
+                    Selecione a Data de Compra do Produto
+                </div>  
             </div>
             <div class="form-group col-md-6">
                 <label for="obsProduto">Observações</label>

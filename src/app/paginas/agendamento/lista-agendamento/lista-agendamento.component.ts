@@ -13,7 +13,7 @@ export class ListaAgendamentoComponent implements OnInit {
 
   public agendamentos: Agendamento[];
   pag = 1 ;
-  contador = 7;
+  contador = 5;
 
   deleteModalRef: BsModalRef;
 

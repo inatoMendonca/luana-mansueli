@@ -58,7 +58,7 @@
         <th>{{agendamento.nomeCliente}}</th>
         <td>{{agendamento.nomeServico}}</td>
         <td>{{agendamento.nomeProfissional}}</td>
-        <td><span>{{ agendamento.diaAgendamento | date:'dd/MM/yyyy' }}</span></td>
+        <td><span>{{ agendamento.diaAgendamento | date: 'dd/MM/yyyy' }}</span></td>
         <td>{{agendamento.inicioAgendamento}} - {{agendamento.fimAgendamento}}</td>
         <td>
           <button type="button" id="btn-editar" class="btn btn-warning btn-sm mr-2"

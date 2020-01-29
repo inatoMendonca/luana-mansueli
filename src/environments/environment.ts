@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlApi: 'http://luana-api.herokuapp.com/api'
+  urlApi: 'http://localhost:3000/api'
 };
 
 /*

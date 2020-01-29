@@ -37,14 +37,18 @@
         <thead>
             <tr>
                 <th scope="col">Nome</th>
-                <th scope="col">Valor</th>
+                <th scope="col">Valor de Compra</th>
+                <th scope="col">Valor de Venda</th>
+                <th scope="col">Data da Compra</th>
                 <th scope="col">Ações</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let produto of produtos | paginate: {itemsPerPage: contador, currentPage: pag}; let i = index">
                 <th>{{produto.nomeProduto}}</th>
-                <td>{{produto.valorProduto}}</td>
+                <td>R$ {{produto.valorCompraProduto}}</td>
+                <td>R$ {{produto.valorVendaProduto}}</td>
+                <td><span>{{ produto.dataCompraProduto | date:'dd/MM/yyyy' }}</span></td>
                 <td>
                     <button type="button" id="btn-editar" class="btn btn-warning btn-sm mr-2" routerLink="/cadastro/produtos/editar/{{produto.idProduto}}">Editar</button>
                     <button type="button" id="btn-excluir" class="btn btn-danger btn-sm" (click)="excluir(produto.idProduto)">Excluir</button>

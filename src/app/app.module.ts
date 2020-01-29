@@ -33,8 +33,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { CriarFornecedorComponent } from './paginas/fornecedor/criar-fornecedor/criar-fornecedor.component';
 import { EditarFornecedorComponent } from './paginas/fornecedor/editar-fornecedor/editar-fornecedor.component';
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,7 +70,7 @@ import { EditarFornecedorComponent } from './paginas/fornecedor/editar-fornecedo
     HttpClientModule,
     FormsModule,
     NgxPaginationModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

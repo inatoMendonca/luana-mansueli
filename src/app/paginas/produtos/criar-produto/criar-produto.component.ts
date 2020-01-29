@@ -27,7 +27,7 @@ export class CriarProdutoComponent {
 
   confirmaInsercao() {
     this.produtoService.criar(this.insereProduto).subscribe (
-      () => {this.router.navigateByUrl('cadastro/servicos');  this.insereModalRef.hide(); },
+      () => {this.router.navigateByUrl('cadastro/produtos');  this.insereModalRef.hide(); },
       () => {this.erroMsgComponent.setError('Falha na criação do Produto'); }
     );
   }
