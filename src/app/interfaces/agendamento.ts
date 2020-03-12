@@ -1,6 +1,6 @@
 type servico = 'Maquiagem' | 'Escova Progressiva' | 'Corte' | 'Coloração' | 'Hidratação' | 'Selante' | 'Penteado' | 'Botox' | 'Matização';
-type profissional = 'Luana Mansueli' | 'Marli' | 'Pâmela' | 'Ana Flávia';
-type formaPagamento = 'Dinheiro' | 'Cheque' | 'Cartão';
+type profissional = 'Luana Mansueli' | 'Marli' | 'Pâmela' | 'Ana Flávia' | 'Thainá';
+type formaPagamento = 'Dinheiro' | 'Cheque' | 'Cartão' | 'Carteira';
 
 export interface Agendamento {
     idAgendamento: number;
