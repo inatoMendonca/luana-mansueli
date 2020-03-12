@@ -18,6 +18,11 @@ import { CriarAgendamentoComponent } from './paginas/agendamento/criar-agendamen
 import { EditarAgendamentoComponent } from './paginas/agendamento/editar-agendamento/editar-agendamento.component';
 import { CriarFornecedorComponent } from './paginas/fornecedor/criar-fornecedor/criar-fornecedor.component';
 import { EditarFornecedorComponent } from './paginas/fornecedor/editar-fornecedor/editar-fornecedor.component';
+import { ListaAgendaComponent } from './paginas/agenda/lista-agenda/lista-agenda.component';
+import { CriarAgendaComponent } from './paginas/agenda/criar-agenda/criar-agenda.component';
+import { EditarAgendaComponent } from './paginas/agenda/editar-agenda/editar-agenda.component';
+import { LancaAgendamentoComponent } from './paginas/agendamento/lanca-agendamento/lanca-agendamento.component';
+import { FormReciboComponent } from './compartilhado/form-recibo/form-recibo.component';
 
 const routes: Routes = [
   {path: 'home', component: ListaAgendamentoComponent},
@@ -27,6 +32,9 @@ const routes: Routes = [
   {path: 'cadastro/produtos', component: ListaProdutosComponent},
   {path: 'cadastro/profissionais', component: ListaProfissionaisComponent},
   {path: 'cadastro/servicos', component: ListaServicosComponent},
+  {path: 'cadastro/agenda', component: ListaAgendaComponent},
+  {path: 'cadastro/agenda/novaagenda', component: CriarAgendaComponent},
+  {path: 'cadastro/agenda/editar/:id', component: EditarAgendaComponent},
   {path: 'cadastro/agendamentos/nome/:name', component: ListaAgendamentoComponent},
   {path: 'cadastro/fornecedores/novofornecedor', component: CriarFornecedorComponent},
   {path: 'cadastro/profissionais/fornecedores/:id', component: EditarFornecedorComponent},
@@ -40,6 +48,8 @@ const routes: Routes = [
   {path: 'cadastro/clientes/editar/:id', component: EditarClienteComponent},
   {path: 'cadastro/agendamentos/novoagendamento', component: CriarAgendamentoComponent},
   {path: 'cadastro/agendamentos/editar/:id', component: EditarAgendamentoComponent},
+  {path: 'cadastro/agendamentos/lancar/:id', component: LancaAgendamentoComponent},
+  {path: 'cadastro/agendamentos/imprimir/:id/:cliente/:profissional/:valor/:servico/:data/:forma', component: FormReciboComponent},
   {path: '**', redirectTo: '/home'}
 ];
 

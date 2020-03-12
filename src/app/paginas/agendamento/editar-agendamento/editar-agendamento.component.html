@@ -1,7 +1,7 @@
 <div class="col-md-8 mx-auto">
     <app-error-msg></app-error-msg>
 </div>
-<app-form-agendamento [agendamento]="agendamento" (outputAgendamento)="atualizar($event)"></app-form-agendamento>
+<app-form-agendamento titulo='Editar Agendamento' tipo=2 [agendamento]="agendamento" (outputAgendamento)="atualizar($event)"></app-form-agendamento>
 <ng-template #alteraModal>
     <div class="modal-body text-center">
       <p>Tem certeza que deseja alterar o Agendamento?</p>

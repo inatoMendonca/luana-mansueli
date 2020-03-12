@@ -63,8 +63,10 @@
         <td>
           <button type="button" id="btn-editar" class="btn btn-warning btn-sm mr-2"
             routerLink="/cadastro/agendamentos/editar/{{agendamento.idAgendamento}}">Editar</button>
-          <button type="button" id="btn-excluir" class="btn btn-danger btn-sm"
+          <button type="button" id="btn-excluir" class="btn btn-danger btn-sm mr-2"
             (click)="excluir(agendamento.idAgendamento)">Excluir</button>
+          <button type="button" id="btn-lancar" class="btn btn-info btn-sm"
+            routerLink="/cadastro/agendamentos/lancar/{{agendamento.idAgendamento}}">Lançar</button>
         </td>
       </tr>
     </tbody>

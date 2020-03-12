@@ -1,0 +1,21 @@
+<div class="col-md-8 mx-auto">
+    <app-error-msg></app-error-msg>
+</div>
+<app-form-agendamento titulo='Lançar Agendamento' tipo=3 [agendamento]="agendamento" (outputAgendamento)="atualizar($event)"></app-form-agendamento>
+<ng-template #lancaModal>
+    <div class="modal-body text-center">
+      <p>Deseja lançar o Agendamento?</p>
+      <button type="button" class="btn btn-default" (click)="confirmaLancamento(geraPDF)">Sim</button>
+      <button type="button" class="btn btn-primary" (click)="cancelaLancamento()">Não</button>
+    </div>
+</ng-template>
+
+<ng-template #geraPDF>
+  <div class="modal-body text-center">
+    <p>Agendamento Lançado!</p>
+    <button type="button" class="btn btn-info" (click)="confirmaPDF()" 
+            [routerLink]="['cadastro/agendamentos/imprimir',agendamento.idAgendamento, agendamento.nomeCliente, 
+                            agendamento.nomeProfissional, agendamento.valorAgendamento, agendamento.nomeServico, agendamento.diaAgendamento]">Gerar PDF</button>
+    <button type="button" class="btn btn-danger" (click)="cancelaPDF()" style="margin-left: 10px;">Fechar</button>
+  </div>
+</ng-template>

@@ -10,6 +10,8 @@ export class FormAgendamentoComponent {
 
   constructor() { }
 
+  @Input() titulo: string;
+  @Input() tipo: number;
   @Input() agendamento: Agendamento = {} as Agendamento;
   @Output() outputAgendamento: EventEmitter<Agendamento> = new EventEmitter();
 

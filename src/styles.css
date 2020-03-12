@@ -16,6 +16,13 @@ body {
     height: 700px;
 }
 
+.tabela-servico {
+    padding-top: 20px;
+    width: 800px;
+    /*background-color: #0073ff;*/
+    height: 700px;
+}
+
 .busca {
     width: 800px;
     height: 40px;
@@ -26,6 +33,19 @@ body {
     width: 800px;
     background-color: #F2F2F2;
     height: 80px;
+    margin: 0 auto;
+    padding-left: 5px;
+    padding-top: 5px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.painel-cli-ag {
+    width: 400px;
+    background-color: #F2F2F2;
     margin: 0 auto;
     padding-left: 5px;
     padding-top: 5px;

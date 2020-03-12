@@ -1,5 +1,5 @@
 <div class="cabecalho">
-    <h1 class="border-bottom">Realizar Agendamento</h1>
+    <h1 class="border-bottom">{{titulo}}</h1>
 </div>
 <div class="form-busca">
     <form #f="ngForm" (ngSubmit)="onSubmit()">
@@ -13,7 +13,8 @@
                     type="text"
                     class="form-control" 
                     id="nomeCliente"
-                    name="nomeCliente" 
+                    name="nomeCliente"
+                    [disabled]="tipo == 3"
                     required
                     placeholder="Digite o nome do(a) Cliente">
                 <div *ngIf="!nomeCliente.valid && nomeCliente.touched" class="invalid-feedback">
@@ -29,6 +30,7 @@
                     id="nomeProfissional" 
                     name="nomeProfissional"
                     class="form-control"
+                    [disabled]="tipo == 3"
                     required>
                     <option [ngValue]="undefined">Selecione...</option>
                     <option value="Luana Mansueli">Luana Mansueli</option>
@@ -49,6 +51,7 @@
                     id="nomeServico"
                     name="nomeServico"
                     class="form-control"
+                    [disabled]="tipo == 3"
                     required>
                     <option [ngValue]="undefined">Selecione...</option>
                     <option value="Maquiagem">Maquiagem</option>
@@ -83,6 +86,7 @@
                     class="form-control" 
                     id="diaAgendamento"
                     name="diaAgendamento" 
+                    [disabled]="tipo == 3"
                     required>
                 <div *ngIf="!diaAgendamento.valid && inicioAgendamento.touched" class="invalid-feedback">
                     Selecione a data do Agendamento
@@ -97,7 +101,8 @@
                     type="time"
                     class="form-control" 
                     id="inicioAgendamento"
-                    name="inicioAgendamento" 
+                    name="inicioAgendamento"
+                    [disabled]="tipo == 3" 
                     required
                     placeholder="Selecione o horário inicial">
                 <div *ngIf="!inicioAgendamento.valid && inicioAgendamento.touched" class="invalid-feedback">
@@ -113,14 +118,15 @@
                     type="time"
                     class="form-control" 
                     id="fimAgendamento"
-                    name="fimAgendamento" 
+                    name="fimAgendamento"
+                    [disabled]="tipo == 3" 
                     required
                     placeholder="Selecione o horário final">
                 <div *ngIf="!fimAgendamento.valid && fimAgendamento.touched" class="invalid-feedback">
                     Selecione o horário final
                 </div>  
             </div>
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-12" [hidden]="tipo == 3">
                 <label for="obsAgendamento">Observações</label>
                 <textarea class="form-control" 
                     #obsServico="ngModel"
@@ -128,13 +134,48 @@
                     id="obsAgendamento" 
                     name="obsAgendamento"
                     rows="3"
+                    [hidden]="tipo == 3"
                     placeholder="Digite alguma Observação caso necessária">
                 </textarea>
             </div>
+            <div class="form-group col-md-12" [hidden]="tipo != 3">
+                <h1><label for="fimAgendamento">Valor Serviço</label></h1>
+                <input
+                    #valorAgendamento="ngModel"
+                    style="width: 130px;"
+                    [class.is-invalid]="!valorAgendamento.valid && valorAgendamento.touched"
+                    [(ngModel)]="agendamento.valorAgendamento"
+                    type="number" 
+                    min="0.00" 
+                    max="10000.00" 
+                    step="0.01"
+                    class="form-control" 
+                    id="valorAgendamento"
+                    name="valorAgendamento"
+                    placeholder="0,00">
+                <div *ngIf="!fimAgendamento.valid && fimAgendamento.touched" class="invalid-feedback">
+                    Digite o valor do Agendamento para lançar
+                </div>  
+            </div>
+            <div class="form-group col-md-12" [hidden]="tipo != 3">
+                <h1><label for="formaPagamento">Forma de Pagamento</label></h1>
+            <select 
+            #formaPagamento="ngModel"
+            [(ngModel)]="agendamento.formaPagamento"
+            id="formaPagamento" 
+            name="formaPagamento"
+            class="form-control col-md-3">
+            <option [ngValue]="undefined">Selecione...</option>
+            <option value="Dinheiro">Dinheiro</option>
+            <option value="Cartão">Cartão</option>
+            <option value="Cheque">Cheque</option>
+            </select>
+        </div>
             <div class="form-group col-md-12 mt-4">
-                <button type="submit" class="btn btn-success btn-lg ml-2 float-right" [disabled]="!f.valid">Inserir</button>
+                <button type="submit" class="btn btn-success btn-lg ml-2 float-right" [disabled]="!f.valid && tipo != 3">Inserir</button>
                 <button type="submit" class="btn btn-primary btn-lg  float-right" routerLink="home/agendamentos">Voltar</button>
             </div>
+
         </div>
     </form>
 </div>

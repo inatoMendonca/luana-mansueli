@@ -1,11 +1,11 @@
 <div class="col-md-8 mx-auto">
     <app-error-msg></app-error-msg>
 </div>
-<app-form-agendamento (outputAgendamento)="criar($event)"></app-form-agendamento>
+<app-form-agendamento titulo='Novo Agendamento' tipo=2 (outputAgendamento)="criar($event)"></app-form-agendamento>
 <ng-template #insereModal>
     <div class="modal-body text-center">
       <p>Inserir novo Agendamento?</p>
       <button type="button" class="btn btn-default" (click)="confirmaInsercao()">Sim</button>
       <button type="button" class="btn btn-primary" (click)="cancelaInsercao()">Não</button>
     </div>
-  </ng-template>
+</ng-template>

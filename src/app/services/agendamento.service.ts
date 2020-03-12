@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.prod';
+// import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Agendamento,  } from '../interfaces/agendamento';
+import { Agendamento  } from '../interfaces/agendamento';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,11 @@ import { Agendamento,  } from '../interfaces/agendamento';
 export class AgendamentoService {
 
   constructor(private http: HttpClient) { }
+
+  getRecibo(id: number): Observable<Agendamento> {
+    const url = `${environment.urlApi}/agendamentos/imprimir/{${id}}`;
+    return this.http.get<Agendamento>(url);
+  }
 
   buscarTodos(): Observable<Agendamento[]> {
     const url = `${environment.urlApi}/agendamentos`;

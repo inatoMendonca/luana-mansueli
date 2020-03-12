@@ -1,0 +1,47 @@
+body {
+    padding: 50px;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+  nav, footer, video, audio, object, embed { 
+    display:none; 
+    }
+  
+  .receipt-main {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    font-size: 12px;
+    border: 1px solid #000;
+  }
+  
+  .receipt-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+  }
+    
+  .receipt-label {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  .text-large {
+    font-size: 20px;
+  }
+  
+  .receipt-section {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
+  .receipt-footer {
+    text-align: center;
+    background: #ff0000;
+  }
+  
