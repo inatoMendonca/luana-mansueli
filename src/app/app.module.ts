@@ -33,10 +33,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { CriarFornecedorComponent } from './paginas/fornecedor/criar-fornecedor/criar-fornecedor.component';
 import { EditarFornecedorComponent } from './paginas/fornecedor/editar-fornecedor/editar-fornecedor.component';
-import { ListaAgendaComponent } from './paginas/agenda/lista-agenda/lista-agenda.component';
-import { EditarAgendaComponent } from './paginas/agenda/editar-agenda/editar-agenda.component';
-import { CriarAgendaComponent } from './paginas/agenda/criar-agenda/criar-agenda.component';
-import { FormAgendaComponent } from './compartilhado/form-agenda/form-agenda.component';
 import { LancaAgendamentoComponent } from './paginas/agendamento/lanca-agendamento/lanca-agendamento.component';
 import { FormReciboComponent } from './compartilhado/form-recibo/form-recibo.component';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
@@ -69,10 +65,6 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
     FormAgendamentoComponent,
     CriarFornecedorComponent,
     EditarFornecedorComponent,
-    ListaAgendaComponent,
-    EditarAgendaComponent,
-    CriarAgendaComponent,
-    FormAgendaComponent,
     LancaAgendamentoComponent,
     FormReciboComponent
 
