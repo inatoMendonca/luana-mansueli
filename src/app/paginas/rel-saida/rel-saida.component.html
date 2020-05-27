@@ -1,0 +1,35 @@
+<div class="cabecalho">
+    <h1 class="border-bottom">Relatório de Saída Diária/Mensal</h1>
+  </div>
+  <div class="busca">
+    <h5 class="border-bottom">Filtragem</h5>
+  </div>
+  <div class="painel-busca" style="width: 1000px !important">
+    <form #f="ngForm">
+      <div class="form-row">
+        <div class="col-auto">
+          <label for="nomeCliente" style="margin-top: 6px;">Nome:</label>
+        </div>
+        <div class="col-auto">
+          <label class="sr-only" for="nomeCliente">Nome</label>
+          <input type="text" class="form-control mb-2" id="nomeCliente"
+            placeholder="Digite o nome aqui..." name="nomeCliente">
+        </div>
+        <div class="col-auto">
+          <label for="data-inicio" style="margin-top: 6px;">Datas:</label>
+        </div>
+        <div class="col-auto">
+          <input type="date" class="form-control"
+            id="diaIniAgendamento" name="diaIniAgendamento">
+        </div>
+        <div class="col-auto">
+            <input type="date" class="form-control"
+              id="diaFimAgendamento" name="diaFimAgendamento">
+          </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-2">Buscar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+

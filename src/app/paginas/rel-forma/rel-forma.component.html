@@ -1,0 +1,38 @@
+<div class="cabecalho">
+    <h1 class="border-bottom">Relatório de Saída Diária/Mensal</h1>
+  </div>
+  <div class="busca">
+    <h5 class="border-bottom">Filtragem</h5>
+  </div>
+  <div class="painel-busca">
+    <form #f="ngForm">
+      <div class="form-row">
+        <div class="col-auto">
+          <label for="nomeCliente" style="margin-top: 6px;">Nome:</label>
+        </div>
+        <div class="col-auto">
+          <label class="sr-only" for="nomeCliente">Nome</label>
+          <input type="text" class="form-control mb-2" id="nomeCliente"
+            placeholder="Digite o nome aqui..." name="nomeCliente">
+        </div>
+        <div class="col-auto">
+
+          <select 
+          id="nomeServico"
+          name="nomeServico"
+          class="form-control">
+          <option [ngValue]="undefined">Forma de Pagamento</option>
+          <option value="Dinheiro">Dinheiro</option>
+          <option value="Cheque">Cheque</option>
+          <option value="Cartão">Cartão</option>
+          <option value="Carteira">Carteira</option>
+      </select>
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-2">Buscar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+

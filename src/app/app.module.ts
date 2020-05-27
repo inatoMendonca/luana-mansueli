@@ -36,6 +36,10 @@ import { EditarFornecedorComponent } from './paginas/fornecedor/editar-fornecedo
 import { LancaAgendamentoComponent } from './paginas/agendamento/lanca-agendamento/lanca-agendamento.component';
 import { FormReciboComponent } from './compartilhado/form-recibo/form-recibo.component';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { RelEntradaComponent } from './paginas/rel-entrada/rel-entrada.component';
+import { RelFormaComponent } from './paginas/rel-forma/rel-forma.component';
+import { RelCarteiraComponent } from './paginas/rel-carteira/rel-carteira.component';
+import { RelSaidaComponent } from './paginas/rel-saida/rel-saida.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +70,11 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
     CriarFornecedorComponent,
     EditarFornecedorComponent,
     LancaAgendamentoComponent,
-    FormReciboComponent
+    FormReciboComponent,
+    RelEntradaComponent,
+    RelFormaComponent,
+    RelCarteiraComponent,
+    RelSaidaComponent
 
 
   ],

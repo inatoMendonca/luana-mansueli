@@ -18,6 +18,7 @@ export class FormReciboComponent implements OnInit {
   data: Date;
   forma: string;
 
+
   constructor(private route: ActivatedRoute, private agendamentoService: AgendamentoService) {
     this.id = this.route.snapshot.params.id;
     this.cliente = this.route.snapshot.params.cliente;
@@ -26,13 +27,13 @@ export class FormReciboComponent implements OnInit {
     this.servico = this.route.snapshot.params.servico;
     this.data = this.route.snapshot.params.data;
     this.forma = this.route.snapshot.params.forma;
-
   }
 
   objAgendamento: any;
 
   @Input() agendamento: Agendamento = {} as Agendamento;
   @Output() outputAgendamento: EventEmitter<Agendamento> = new EventEmitter();
+
 
   ngOnInit() {
     this.objAgendamento = this.agendamentoService.buscarUm(this.id);

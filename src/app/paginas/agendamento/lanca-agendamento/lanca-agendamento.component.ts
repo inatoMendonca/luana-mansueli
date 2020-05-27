@@ -61,8 +61,6 @@ export class LancaAgendamentoComponent {
                                         ${this.lancarAgendamento.diaAgendamento}/
                                         ${this.lancarAgendamento.formaPagamento}`); this.geraPDF.hide(); },
       () => {this.erroMsgComponent.setError('Falha ao lançar o Agendamento'); });
-    console.log(this.lancarAgendamento.idAgendamento);
-    console.log(this.lancarAgendamento.nomeCliente);
   }
 
 }

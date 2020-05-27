@@ -20,6 +20,11 @@ import { CriarFornecedorComponent } from './paginas/fornecedor/criar-fornecedor/
 import { EditarFornecedorComponent } from './paginas/fornecedor/editar-fornecedor/editar-fornecedor.component';
 import { LancaAgendamentoComponent } from './paginas/agendamento/lanca-agendamento/lanca-agendamento.component';
 import { FormReciboComponent } from './compartilhado/form-recibo/form-recibo.component';
+import { RelEntradaComponent } from './paginas/rel-entrada/rel-entrada.component';
+import { RelSaidaComponent } from './paginas/rel-saida/rel-saida.component';
+import { RelCarteiraComponent } from './paginas/rel-carteira/rel-carteira.component';
+import { RelFormaComponent } from './paginas/rel-forma/rel-forma.component';
+
 
 const routes: Routes = [
   {path: 'home', component: ListaAgendamentoComponent},
@@ -44,6 +49,10 @@ const routes: Routes = [
   {path: 'cadastro/agendamentos/editar/:id', component: EditarAgendamentoComponent},
   {path: 'cadastro/agendamentos/lancar/:id', component: LancaAgendamentoComponent},
   {path: 'cadastro/agendamentos/imprimir/:id/:cliente/:profissional/:valor/:servico/:data/:forma', component: FormReciboComponent},
+  {path: 'relatorio/agendamentos/entrada', component: RelEntradaComponent},
+  {path: 'relatorio/agendamentos/saida', component: RelSaidaComponent},
+  {path: 'relatorio/agendamentos/carteira', component: RelCarteiraComponent},
+  {path: 'relatorio/agendamentos/forma', component: RelFormaComponent},
   {path: '**', redirectTo: '/home'}
 ];
 

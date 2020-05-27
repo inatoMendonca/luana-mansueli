@@ -1,0 +1,45 @@
+<div class="cabecalho">
+    <h1 class="border-bottom">Relatório de Clientes Abertos em Carteira</h1>
+  </div>
+  <div class="busca">
+    <h5 class="border-bottom">Filtragem</h5>
+  </div>
+  <div class="painel-busca">
+    <form #f="ngForm">
+      <div class="form-row">
+        <div class="col-auto">
+          <label for="nomeCliente" style="margin-top: 6px;">Nome:</label>
+        </div>
+        <div class="col-auto">
+          <label class="sr-only" for="nomeCliente">Nome</label>
+          <input type="text" class="form-control mb-2" id="nomeCliente"
+            placeholder="Digite o nome aqui..." name="nomeCliente">
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-2">Buscar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="tabela-cadastro">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col">Dia Agendamento</th>
+          <th scope="col">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let agendamento of agendamentos | paginate: {itemsPerPage: contador, currentPage: pag}; let i = index">
+          <th>{{agendamento.nomeCliente}}</th>
+          <td><span>{{ agendamento.diaAgendamento | date: 'dd/MM/yyyy' }}</span></td>
+          <td>{{agendamento.valorAgendamento}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="text-center">
+      <pagination-controls (pageChange)="pag = $event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
+    </div>
+  </div>
