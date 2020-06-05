@@ -17,7 +17,7 @@ export class FormReciboComponent implements OnInit {
   servico: string;
   data: Date;
   forma: string;
-
+  validaForma: number;
 
   constructor(private route: ActivatedRoute, private agendamentoService: AgendamentoService) {
     this.id = this.route.snapshot.params.id;
@@ -27,7 +27,9 @@ export class FormReciboComponent implements OnInit {
     this.servico = this.route.snapshot.params.servico;
     this.data = this.route.snapshot.params.data;
     this.forma = this.route.snapshot.params.forma;
+    this.validaForma = 1;
   }
+
 
   objAgendamento: any;
 
@@ -36,6 +38,10 @@ export class FormReciboComponent implements OnInit {
 
 
   ngOnInit() {
+    if (this.forma === 'Carteira') {
+      this.validaForma = 2;
+    }
+
     this.objAgendamento = this.agendamentoService.buscarUm(this.id);
   }
 

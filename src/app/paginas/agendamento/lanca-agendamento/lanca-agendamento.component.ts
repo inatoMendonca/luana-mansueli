@@ -53,13 +53,8 @@ export class LancaAgendamentoComponent {
 
   confirmaPDF() {
     this.agendamentoService.buscarUm(this.lancarAgendamento.idAgendamento).subscribe(
-      () => {this.router.navigateByUrl(`cadastro/agendamentos/imprimir/${this.lancarAgendamento.idAgendamento}/
-                                        ${this.lancarAgendamento.nomeCliente}/
-                                        ${this.lancarAgendamento.nomeProfissional}/
-                                        ${this.lancarAgendamento.valorAgendamento}/
-                                        ${this.lancarAgendamento.nomeServico}/
-                                        ${this.lancarAgendamento.diaAgendamento}/
-                                        ${this.lancarAgendamento.formaPagamento}`); this.geraPDF.hide(); },
+      // tslint:disable-next-line: max-line-length
+      () => {this.router.navigateByUrl(`cadastro/agendamentos/imprimir/${this.lancarAgendamento.idAgendamento}/${this.lancarAgendamento.nomeCliente}/${this.lancarAgendamento.nomeProfissional}/${this.lancarAgendamento.valorAgendamento}/${this.lancarAgendamento.nomeServico}/${this.lancarAgendamento.diaAgendamento}/${this.lancarAgendamento.formaPagamento}`); this.geraPDF.hide(); },
       () => {this.erroMsgComponent.setError('Falha ao lançar o Agendamento'); });
   }
 

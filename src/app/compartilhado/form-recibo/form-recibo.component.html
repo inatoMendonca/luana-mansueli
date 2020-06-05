@@ -28,11 +28,20 @@
       <span>{{forma}}</span>
     </div>
     
-    <div class="receipt-section" style="text-align: center !important;">
-      <p style="margin-top: 20px;">_________________________________________________________</p>
-      <p style="margin-top: -12px;">{{cliente}}</p>
-    </div>
+    <ng-container *ngIf="validaForma === 1">
+      <br/>
+      <div class="receipt-label text-large">
+        <p style="margin-top: -12px;">Recebemos de {{cliente}} a importância de R{{valor | currency}}.</p>
+      </div>
+    </ng-container>
     
+    <ng-container *ngIf="validaForma === 2">
+      <div class="receipt-label" style="text-align: center !important;">
+        <p style="margin-top: 20px;">_________________________________________________________</p>
+        <p style="margin-top: -12px;">{{cliente}}</p>
+      </div>
+    </ng-container>
+
     <div class="receipt-section">
       <p class="float-right text-large">José Bonifácio, {{data | date: 'dd/MM/yyyy'}}</p>
     </div>
@@ -44,7 +53,7 @@
   <br/>
   <br/>
 
-  <div class="receipt-main">
+  <div class="receipt-main" [hidden]="validaForma !=2">
     <p class="receipt-title">Luana Mansuelli - Instituto de Beleza</p>
     
     <div class="receipt-section float-left">
