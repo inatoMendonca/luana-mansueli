@@ -1,23 +1,23 @@
-<div class="receipt-main">
+<div class="receipt-main" style="border: none">
     <p class="receipt-title">Luana Mansuelli - Instituto de Beleza</p>
-    
+
     <div class="receipt-section float-left">
       <span class="receipt-label text-large">Cliente: </span>
       <span class="text-large">{{cliente}}</span>
     </div>
-    
+
     <div class="float-right receipt-section">
       <span class="text-large receipt-label">R</span>
       <span class="text-large">{{valor | currency}}</span>
     </div>
-    
+
     <div class="clearfix"></div>
-    
+
     <div class="receipt-section">
       <span class="receipt-label">Profissional: </span>
       <span>{{profissional}}</span>
     </div>
-    
+
     <div class="receipt-section">
       <span class="receipt-label">Serviços Realizados: </span>
       <span>{{servico}}</span>
@@ -27,14 +27,14 @@
       <span class="receipt-label">Forma de Pagamento: </span>
       <span>{{forma}}</span>
     </div>
-    
+
     <ng-container *ngIf="validaForma === 1">
       <br/>
       <div class="receipt-label text-large">
         <p style="margin-top: -12px;">Recebemos de {{cliente}} a importância de R{{valor | currency}}.</p>
       </div>
     </ng-container>
-    
+
     <ng-container *ngIf="validaForma === 2">
       <div class="receipt-label" style="text-align: center !important;">
         <p style="margin-top: 20px;">_________________________________________________________</p>
@@ -45,7 +45,7 @@
     <div class="receipt-section">
       <p class="float-right text-large">José Bonifácio, {{data | date: 'dd/MM/yyyy'}}</p>
     </div>
-    
+
     <div class="clearfix"></div>
   </div>
 
@@ -53,26 +53,26 @@
   <br/>
   <br/>
 
-  <div class="receipt-main" [hidden]="validaForma !=2">
+  <div class="receipt-main" [hidden]="validaForma !=2" style="border: none">
     <p class="receipt-title">Luana Mansuelli - Instituto de Beleza</p>
-    
+
     <div class="receipt-section float-left">
       <span class="receipt-label text-large">Cliente: </span>
       <span class="text-large">{{cliente}}</span>
     </div>
-    
+
     <div class="float-right receipt-section">
       <span class="text-large receipt-label">R</span>
       <span class="text-large">{{valor | currency}}</span>
     </div>
-    
+
     <div class="clearfix"></div>
-    
+
     <div class="receipt-section">
       <span class="receipt-label">Profissional: </span>
       <span>{{profissional}}</span>
     </div>
-    
+
     <div class="receipt-section">
       <span class="receipt-label">Serviços Realizados: </span>
       <span>{{servico}}</span>
@@ -82,12 +82,12 @@
       <span class="receipt-label">Forma de Pagamento: </span>
       <span>{{forma}}</span>
     </div>
-    
-    
+
+
     <div class="receipt-section">
       <p class="float-right text-large">José Bonifácio, {{data | date: 'dd/MM/yyyy'}}</p>
     </div>
-    
+
     <div class="clearfix"></div>
   </div>
-  
+
